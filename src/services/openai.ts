@@ -1,6 +1,6 @@
 import { GeneratedIdea } from '../types';
 
-const API_BASE_URL = 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; // Backend endpoint
+const API_BASE_URL = "url"; // Backend endpoint
 
 export class OpenAIService {
   async generateIdeas(
