@@ -1,6 +1,6 @@
 export async function generateIdeas(prompt: string): Promise<string> {
   try {
-    const response = await fetch("/api/chat", {
+    const response = await fetch('https://kaizen-ideas.vercel.app/api/chat', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
