@@ -161,7 +161,7 @@ function App() {
           {canShowPhrase && (
             <div className="mb-8">
               <GeneratedPhrase
-                category={categories.find(c => c.id === selectedCategory)?.name || ''}
+                category={selectedCategoryName}
                 medio={selectedWords.medio}
                 tema={selectedWords.tema}
                 impacto={selectedWords.impacto}

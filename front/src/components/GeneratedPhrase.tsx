@@ -3,6 +3,8 @@ import { MessageSquare } from 'lucide-react';
 
 interface GeneratedPhraseProps {
   category: string;
+  category: string;
+  category: string;
   medio: string;
   tema: string;
   impacto: string;
@@ -10,6 +12,8 @@ interface GeneratedPhraseProps {
 }
 
 export const GeneratedPhrase: React.FC<GeneratedPhraseProps> = ({
+  category,
+  category,
   category,
   medio,
   tema,
@@ -26,19 +30,9 @@ export const GeneratedPhrase: React.FC<GeneratedPhraseProps> = ({
           <h3 className="text-lg font-semibold text-gray-800 mb-2">
             Frase generada:
           </h3>
-          {hasAllWords ? (
-            <p className="text-lg text-gray-800 leading-relaxed">
-              En la <span className="font-semibold text-indigo-700">{category}</span>, usando{' '}
-              <span className="font-semibold text-blue-700">{medio}</span> en el contexto de{' '}
-              <span className="font-semibold text-green-700">{tema}</span> se busca sobresalir en{' '}
-              <span className="font-semibold text-purple-700">{impacto}</span> para el área de{' '}
-              <span className="font-semibold text-orange-700">{area}</span>.
-            </p>
-          ) : (
-            <p className="text-gray-500 italic">
-              Selecciona todas las palabras para generar tu frase personalizada.
-            </p>
-          )}
+          <p className="text-gray-700 leading-relaxed italic">
+            "{phrase}"
+          </p>
         </div>
       </div>
     </div>
