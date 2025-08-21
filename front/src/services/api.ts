@@ -1,6 +1,6 @@
 export async function generateIdeas(prompt: string): Promise<string> {
   try {
-    const response = await fetch('https://kaizen-ideas.vercel.app/api/chat', {
+    const response = await fetch("https://kaizen-ideas.vercel.app/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -13,9 +13,16 @@ export async function generateIdeas(prompt: string): Promise<string> {
     }
 
     const data = await response.json();
-    return data.choices[0].message.content;
+
+    // ✅ Evita error si no hay respuesta
+    const content = data.choices?.[0]?.message?.content;
+    if (!content) {
+      throw new Error("No se recibió contenido desde OpenAI");
+    }
+
+    return content;
   } catch (error) {
-    console.error('Error generating ideas:', error);
-    throw new Error('Error al generar ideas. Por favor, inténtalo de nuevo.');
+    console.error("Error generating ideas:", error);
+    throw new Error("Error al generar ideas. Por favor, inténtalo de nuevo.");
   }
 }
