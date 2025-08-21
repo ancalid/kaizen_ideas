@@ -1,5 +1,5 @@
 import { WordCategory } from '../types';
-
+//el bueno
 export const wordCategories: WordCategory[] = [
   {
     id: 'medio',
@@ -60,26 +60,14 @@ export const wordCategories: WordCategory[] = [
     title: 'El Medio que Impacta',
     color: 'bg-purple-50 border-purple-200 text-purple-800',
     words: [
-      'Aumento de productividad',
-      'Reducción de errores',
-      'Ahorro de tiempo',
-      'Mayor satisfacción interna',
-      'Mejora en la comunicación',
-      'Mejor clima laboral',
-      'Optimización de recursos',
-      'Mayor compromiso del personal',
-      'Mejores decisiones estratégicas',
-      'Disminución de retrabajo',
-      'Más eficiencia operativa',
-      'Agilidad administrativa',
-      'Reducción de costos',
-      'Fortalecimiento de cultura organizacional',
-      'Mejora en la coordinación',
-      'Mayor claridad de procesos',
-      'Impacto positivo en auditorías',
-      'Aumento de calidad',
-      'Toma de decisiones más rápida',
-      'Fortalecimiento del equipo'
+      'Flujos de información',
+      'Gestión del tiempo',
+      'Desarrollo de competencias',
+      'Ecológica',
+      'Cultura Organizacional',
+      'Innovación tecnológica',
+      'Satisfacción al cliente',
+      'Eficiencia en procesos'
     ]
   }
 ];
