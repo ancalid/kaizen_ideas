@@ -85,6 +85,7 @@ function App() {
     try {
       const ideas = await generateIdeas(prompt);
       setGeneratedIdeas(ideas);
+        selectedCategoryName,
     } catch (error) {
       setGeneratedIdeas('Error al generar ideas. Por favor, inténtalo de nuevo.');
     } finally {
