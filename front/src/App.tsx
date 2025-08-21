@@ -25,7 +25,6 @@ import { generateIdeas } from './services/api';
 function App() {
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedWords, setSelectedWords] = useState<SelectedWords>({
     medio: '',
     tema: '',
@@ -71,7 +70,7 @@ function App() {
   };
 
   const handleGenerateIdeas = async () => {
-    if (!selectedArea || !selectedCategory || !selectedWords.medio || !selectedWords.tema || !selectedWords.impacto) {
+    if (!canGenerateIdeas) {
       return;
     }
 
