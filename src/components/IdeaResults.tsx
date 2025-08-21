@@ -16,7 +16,7 @@ export const IdeaResults: React.FC<IdeaResultsProps> = ({
   if (isLoading) {
     return (
       <div className="bg-white border-2 border-gray-200 rounded-xl p-8 text-center">
-        <Loader2 className="w-8 h-8 text-blue-600 animate-spin mx-auto mb-4" />
+        
         <p className="text-gray-600">Generando ideas innovadoras...</p>
       </div>
     );
