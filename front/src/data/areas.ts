@@ -12,5 +12,5 @@ export const areas: Area[] = [
   { id: 'contraloria', name: 'Contraloría' },
   { id: 'operaciones', name: 'Operaciones' },
   { id: 'control-vehicular', name: 'Control vehicular' },
-  { id: 'estaciones', name: 'Estaciones de servicio' },
+  { id: 'estaciones', name: 'Estaciones de servicio' }
 ];

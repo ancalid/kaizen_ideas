@@ -3,6 +3,7 @@ import { MessageSquare } from 'lucide-react';
 
 interface GeneratedPhraseProps {
   category: string;
+  category: string;
   medio: string;
   tema: string;
   impacto: string;
@@ -11,12 +12,13 @@ interface GeneratedPhraseProps {
 
 export const GeneratedPhrase: React.FC<GeneratedPhraseProps> = ({
   category,
+  category,
   medio,
   tema,
   impacto,
   area,
 }) => {
-  const phrase = `En la ${category}, usando ${medio} en el contexto de ${tema} se busca sobresalir en ${impacto} para el área de ${area}.`;
+  const hasAllWords = category && medio && tema && impacto && area;
 
   return (
     <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6 border border-indigo-200">

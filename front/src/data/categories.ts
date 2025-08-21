@@ -8,5 +8,5 @@ export const categories: Category[] = [
   { id: 'cultura', name: 'Cultura Organizacional' },
   { id: 'tecnologia', name: 'Innovación tecnológica' },
   { id: 'cliente', name: 'Satisfacción al cliente' },
-  { id: 'procesos', name: 'Eficiencia en procesos' },
+  { id: 'procesos', name: 'Eficiencia en procesos' }
 ];
