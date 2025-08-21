@@ -50,9 +50,7 @@ export const IdeaResults: React.FC<IdeaResultsProps> = ({
             className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-200"
           >
             <div className="flex items-start gap-3">
-              <span className="bg-blue-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
-                {idea.id}
-              </span>
+             
               <p className="text-gray-800 leading-relaxed">{idea.content}</p>
             </div>
           </div>
