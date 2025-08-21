@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { RefreshCw, Sparkles, Lightbulb } from 'lucide-react';
 import { AreaSelector } from './components/AreaSelector';
 import { WordBlock } from './components/WordBlock';
@@ -9,11 +9,9 @@ import { OpenAIService } from './services/openai';
 import { areas } from './data/areas';
 import { wordCategories } from './data/words';
 import { GeneratedIdea } from './types';
-import { CategorySelector } from './components/CategorySelector';  // Asegúrate de tener este componente
 
 function App() {
   const [selectedArea, setSelectedArea] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
   const [ideas, setIdeas] = useState<GeneratedIdea[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +23,7 @@ function App() {
   const tema = getWordByCategory('tema');
   const impacto = getWordByCategory('impacto');
 
-  const canGenerateIdeas = selectedArea && selectedCategory && medio && tema && impacto;
+  const canGenerateIdeas = selectedArea && medio && tema && impacto;
 
   const handleGenerateIdeas = async () => {
     if (!canGenerateIdeas) return;
@@ -49,12 +47,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    // Si seleccionas un área o categoría, generamos nuevas palabras
-    if (selectedArea && selectedCategory) {
-      generateNewWords();
-    }
-  }, [selectedArea, selectedCategory]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -74,7 +66,7 @@ function App() {
         </div>
 
         <div className="space-y-8">
-          {/* Area and Category Selection */}
+          {/* Area Selection */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
               1. Selecciona tu área de trabajo
@@ -86,23 +78,11 @@ function App() {
             />
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">
-              2. Selecciona una categoría
-            </h2>
-            <CategorySelector
-              categories={wordCategories}  // Aquí, 'wordCategories' puede ser la lista de categorías
-              selectedCategory={selectedCategory}
-              onCategoryChange={setSelectedCategory}
-              disabled={!selectedArea}
-            />
-          </div>
-
           {/* Word Categories */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-gray-800">
-                3. Genera palabras clave
+                2. Genera palabras clave
               </h2>
               <button
                 onClick={generateNewWords}
@@ -133,7 +113,7 @@ function App() {
           {/* Generated Phrase */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
-              4. Frase generada automáticamente
+              3. Frase generada automáticamente
             </h2>
             <GeneratedPhrase
               medio={medio}
@@ -159,6 +139,7 @@ function App() {
             </button>
           </div>
 
+          
           {/* Results */}
           {(ideas.length > 0 || isLoading || error) && (
             <IdeaResults
