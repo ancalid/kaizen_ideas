@@ -5,7 +5,7 @@ const API_BASE_URL = "url"; // Backend endpoint
 export class OpenAIService {
   async generateIdeas(
     area: string,
-    category: string
+    category: string,
     medio: string,
     tema: string,
     impacto: string
