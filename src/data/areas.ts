@@ -13,5 +13,8 @@ export const areas: Area[] = [
   { id: 'operaciones', name: 'Operaciones' },
   { id: 'control-vehicular', name: 'Control vehicular' },
   { id: 'estaciones', name: 'Estaciones de servicio' },
-  { id: 'contabilidad', name: 'Contabilidad y Finanzas'}
+  { id: 'contabilidad', name: 'Contabilidad y Finanzas'},
+  { id: 'mantenimiento', name: 'Mantenimiento'},
+  { id: 'admin-qroo', name: 'Adminitración Quintana Roo'},
+  { id: 'oper-qroo', name: 'Operaciones Quintana Roo'}
 ];
